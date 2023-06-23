@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url(./img/isabell-winter-OzFpu1OBXVI-unsplash-copia.jpg);
+    background-image: url(./img/oleg-laptev-7jQh3EiS8Bs-unsplash.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -24,16 +24,16 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 25rem;
-    height: 60%;
+    width: 28rem;
+    height: 70%;
     background-color: rgba(22, 22, 22, 0.6);
     border-radius: 10px;
 }
 
 h2 {
-    font-family: 'Roboto';
+    font-family:sans-serif;
     text-align: center;
-    font-size: 32px;
+    font-size: 2.5rem;
     color: white;
 }
 
@@ -50,7 +50,7 @@ h2 {
     align-items: center;
     width: 70%;
     height: 100%;
-    gap: 2.5rem;
+    gap: 2.9rem;
 }
 
 .form div {
@@ -102,10 +102,11 @@ input:focus {
 .btn-form {
     border: none;
     background: rgb(0, 0, 0, 0.2);
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
     color: white;
     cursor: pointer;
+    font-size: 14px;
     transition: 400ms;
 }
 
@@ -126,4 +127,38 @@ input:focus {
 
 .arrowContinue:hover {
     transform: scale(1.2);
+}
+
+
+/* --- Estilos del archivo Calendar ---  */
+
+.bodyCalendar {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+td {
+    font-size: 14px;
 }

@@ -21,18 +21,18 @@
             <div class="registro">
                 <h2>Registro</h2>
                 <div class="container-form">
-                    <form class="form">
+                    <form id="myForm" class="form">
                         <div>
-                            <label for="nombre">Nombre:</label>
-                            <input type="text" id="nombre" placeholder="Ingrese su nombre">
+                            <label for="name">Nombre:</label>
+                            <input type="text" id="name" placeholder="Ingrese su nombre" required>
                         </div>
                         <div>
-                            <label for="apellido">Apellido:</label>
-                            <input type="name" id="apellido" placeholder="Ingrese su apellido">
+                            <label for="lastName">Apellido:</label>
+                            <input type="text" id="lastName" placeholder="Ingrese su apellido" required>
                         </div>
                         <div>
                             <label for="email">Email:</label>
-                            <input type="text" id="email" placeholder="Ingrese su email">
+                            <input type="email" id="email" placeholder="Ingrese su email" required>
                         </div>
                         <div class="btns-form">
                             <button class="btn-form" type="reset">Borrar</button>
@@ -48,7 +48,8 @@
         </div>
 
     </main>
-
+ 
+    <script src="index.js"></script>
 </body>
 
 </html>
