@@ -11,4 +11,29 @@ document.getElementById('myForm').addEventListener('submit', function(value) {
     console.log('Email: ',email);
 })
 
+function agregarTarea() {
 
+    const lista = document.getElementById("lista")
+    const textoTarea = document.getElementById("nombreTarea")
+    
+    const nuevoElem = document.createElement("li")
+
+    // console.log(textoTarea)
+    
+    nuevoElem.innerHTML = textoTarea.value
+
+    lista.appendChild(nuevoElem)
+}
+
+function eliminarTarea() {
+    const lista = document.getElementById("lista")
+    const textoTarea = document.getElementById("nombreTarea")
+    
+    // for(let i =0; i < lista.childElementCount; i++) {
+    //     console.log(lista.children[i])
+    // }
+
+    if (lista.childElementCount > 0){
+        lista.removeChild(lista.lastChild)
+    }
+}
