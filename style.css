@@ -32,7 +32,7 @@ body {
 }
 
 h2 {
-    font-family:sans-serif;
+    font-family: sans-serif;
     text-align: center;
     font-size: 2.5rem;
     color: white;
@@ -91,6 +91,7 @@ h2 {
 .inputForm:focus {
     outline: none;
     border: none;
+    animation: shake .3s;
     background: rgb(0, 0, 0, 0.2);
 }
 
@@ -131,140 +132,195 @@ h2 {
 }
 
 
+/* --- Barra de navegacion --- */
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .arrowBack {
+        background-color: rgba(22, 22, 22, 0.6);
+        padding: 0.5rem;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: 400ms;
+    }
+
+    & .arrowBack:hover {
+        transform: scale(1.1);
+    }
+}
+
+.containerItems {
+    display: flex;
+    flex-direction: row;
+
+    & li {
+        padding: 0 1rem;
+
+        & a {
+            font-weight: bolder;
+            color: #141E27;
+        }
+    }
+
+    & li:hover {
+        transform: scale(1.1);
+        transition: .3s;
+    }
+}
+
 /* --- Estilos del archivo Calendar ---  */
 
 .bodyCalendar {
-    background: #EEEDDE;
+    background: #e2e1d3;
     font-family: Arial, sans-serif;
     padding: 20px;
 }
-.containerSelect{
+
+.containerSelect {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 3rem;
+
+    & h1 {
+        font-family: 'Abel', sans-serif;
+        font-size: 3rem;
+        text-align: center;
+        text-shadow: 0.5px 0.5px 10px black;
+        color: white;
+        margin: 1rem;
+    }
+
+    .labelFecha {
+        text-align: center;
+        font-family: 'Abel', sans-serif;
+        font-size: 1.3rem;
+        text-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .inputFecha {
+        margin-top: 10px;
+        padding: 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+        font-size: 1rem;
+        background: rgb(0, 0, 0, 0.1);
+    }
 }
 
-h1 {
-    font-family: 'Abel', sans-serif;
-    font-size: 3rem;
-    text-align: center;
-    text-shadow: 0.5px 0.5px 3px black;
-    color: white;
-    margin: 1rem;
-}
-
-.inputFecha{
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-    border: none;
-}
-
-.containerCard{
+.containerCard {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    height: 80vh;
+    flex-wrap: wrap;
+    gap: 5rem;
+    height: 75vh;
 }
 
 .mañana,
 .tarde,
-.noche{
+.noche {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 25%;
+    width: 25rem;
     height: 80%;
-    border-radius: 10px;
+    border-radius: 1rem;
+    border-color: transparent;
+    box-shadow: 3px 3px 15px 10px rgba(0, 0, 0, 0.2);
 }
 
-.mañana{
-    background-color:#bbb994;
+.mañana {
+    background-color: #959475;
 }
 
-.tarde{
+.tarde {
     background-color: #2b3e45;
 }
 
-.noche{
+.noche {
     background-color: #141E27;
 }
 
-.textCard{
-    margin-bottom: 1rem;
-    font-size: 2rem;
 
-}
-
-.divDia{
-    margin-top: 1rem;
+.divDia {
+    margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     width: 100%;
+
+
+    .textCard {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        font-family: 'Abel', sans-serif;
+        font-style: italic;
+        text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    & li {
+        font-family: 'Roboto', sans-serif;
+        font-style: italic;
+        color: #ffffffe0;
+        margin: 5px 10px
+    }
 }
 
-.labelDia{
-    width: 50%;
-    background-color: rgb(0, 0, 0, 0.1);
-    border-radius: 5px;
-    color: rgb(255, 255, 255);
-    padding: 5px;
-}
-
-.inputDia{
-    background-color: transparent;
-    width: 100px;
-    height: 25px;
-    border: none;
-    color: rgba(3, 3, 3, 0.9);
-    text-align: center;
-    border-radius: 50px;
-    font-weight: bold;
-}
-
-li{
+li {
     color: white;
 }
 
-.divText{
+.divText {
     display: flex;
     flex-direction: row;
+
+    .inputText {
+        font-size: 16px;
+        width: 100%;
+        padding: 5px;
+        background-color: transparent;
+        border: none;
+        color: wheat;
+    }
+
+    .inputText::placeholder {
+        color: #eeedde9d;
+    }
 }
 
-.inputText{
-    width: 100%;
-    padding: 5px;
-    background-color: transparent;
-    border: none;
-    color: wheat;
-}
-
-.inputText:focus, 
-.inputDia:focus,
-.inputMes:focus{
+.inputText:focus,
+.inputFecha:focus {
     outline: none;
     border: none;
 }
 
-.botones{
+.botones {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 1rem;
-}
 
-.btnCalendar{
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-}
+    .btnCalendar {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        border: none;
+        background: transparent;
 
-img{
-    width: 100%;
-    height: 100%;
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .btnCalendar:hover{
+        transition: .2s;
+        transform: scale(1.3);
+    }
 }

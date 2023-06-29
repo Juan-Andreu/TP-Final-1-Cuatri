@@ -11,29 +11,53 @@ document.getElementById('myForm').addEventListener('submit', function(value) {
     console.log('Email: ',email);
 })
 
-function agregarTarea() {
+  
 
-    const lista = document.getElementById("lista")
-    const textoTarea = document.getElementById("nombreTarea")
+function agregarTarea(seccion) {
+    // Obtener el valor del campo de entrada de texto correspondiente a la sección
+    var inputId = "nombreTarea" + seccion;
+    var nuevaTarea = document.getElementById(inputId).value;
+  
+    // Crear un nuevo elemento de lista
+    var nuevoElemento = document.createElement("li");
+  
+    // Agregar el valor del campo de entrada de texto al nuevo elemento de lista
+    nuevoElemento.appendChild(document.createTextNode(nuevaTarea));
+  
+    // Crear el checkbox para la tarea
+    var checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.name = "opcion";
     
-    const nuevoElem = document.createElement("li")
-
-    // console.log(textoTarea)
-    
-    nuevoElem.innerHTML = textoTarea.value
-
-    lista.appendChild(nuevoElem)
-}
-
-function eliminarTarea() {
-    const lista = document.getElementById("lista")
-    const textoTarea = document.getElementById("nombreTarea")
-    
-    // for(let i =0; i < lista.childElementCount; i++) {
-    //     console.log(lista.children[i])
-    // }
-
-    if (lista.childElementCount > 0){
-        lista.removeChild(lista.lastChild)
+    // Agregar el checkbox al final del nuevo elemento de lista
+    nuevoElemento.appendChild(checkbox);
+  
+    // Obtener la lista correspondiente a la sección
+    var listaId = "lista" + seccion;
+    var lista = document.getElementById(listaId);
+  
+    // Agregar el nuevo elemento de lista a la lista existente
+    lista.appendChild(nuevoElemento);
+  
+    // Limpiar el campo de entrada de texto
+    document.getElementById(inputId).value = "";
+  }
+  
+  
+  // Función para eliminar una tarea de la lista
+  function eliminarTarea(seccion) {
+    // Obtener la lista correspondiente a la sección
+    let listaId = "lista" + seccion;
+    let lista = document.getElementById(listaId);
+  
+    // Obtener el primer elemento de lista de la lista
+    let primerElemento = lista.getElementsByTagName("li")[0];
+  
+    // Verificar si hay un elemento para eliminar
+    if (primerElemento) {
+      // Eliminar el primer elemento de lista de la lista
+      lista.removeChild(primerElemento);
     }
-}
+  }
+  
+  
