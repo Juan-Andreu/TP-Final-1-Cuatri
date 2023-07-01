@@ -174,7 +174,7 @@ body {
     .containerItems {
         display: flex;
         flex-direction: row;
-        margin-right: 3rem;
+        /* margin-right: 1rem; */
     
         & li {
             padding: 0 1.5rem;
@@ -275,10 +275,12 @@ body {
     width: 100%;
 
     .textCard {
-        margin-bottom: 1rem;
+        text-align: center;
+        color: #eeedde;
         font-size: 2rem;
         font-family: 'Abel', sans-serif;
         font-style: italic;
+        margin-bottom: 1rem;
         text-shadow: 0px 0px 10x 10px rgba(0, 0, 0, 1);
     }
 
