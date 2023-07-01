@@ -19,18 +19,17 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
     flex-wrap: wrap;
     height: 100vh;
-    align-items: center;
 
     .cardRegistro {
+        width: 26rem;
+        height: 40rem;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        align-items: center;
-        width: 26rem;
-        height: 40rem;
-        margin: 2rem;
+        margin: 2rem; 
         background-color: rgba(22, 22, 22, 0.7);
         border-radius: 10px;
         box-shadow: 3px 3px 15px 10px rgba(0, 0, 0, 0.2);
@@ -48,93 +47,90 @@ body {
             font-family: 'Abel', sans-serif;
             font-size: 16px;
             text-align: center;
-            /* font-style: italic; */
+            font-style: italic;
             color: #85bb6b;
             text-shadow: 0.3px 0.3px 0.5px black;
             border-bottom: 1px solid rgb(0, 0, 0, 0.1);
         }
+
+        .containerForm {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 70%;
+                gap: 2rem;
+
+                & div{
+                    width: 100%;
+
+                    .labelI {
+                        font-family: 'Abel', sans-serif;
+                        display: block;
+                        margin-bottom: 5px;
+                        color: white;
+                        text-shadow: 0.3px 0.3px 0.5px black;
+                        font-size: 20px;
+                    }
+                    
+                    .inputForm {
+                        width: 100%;
+                        color: white;
+                        padding: 10px;
+                        border: none;
+                        background: transparent;
+                        border-radius: 0 5px;
+                        font-size: 14px;
+                        border-bottom: 1px solid #85bb6b;
+                        transition: 400ms;
+                    }
+
+                    .inputForm:hover {
+                        background-color: rgb(0, 0, 0, 0.2);
+                        transform: scale(1.1);
+                    }
+                    
+                    .inputForm::placeholder {
+                        color: rgba(255, 255, 255, 0.577);
+                    }
+
+                    .inputForm:focus {
+                        outline: none;
+                        border: none;
+                        animation: shake .3s;
+                        background: rgb(0, 0, 0, 0.2);
+                    }
+                }
+
+                .btnsForm {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    .btn-form {
+                        border: none;
+                        background: rgb(0, 0, 0, 0.2);
+                        padding: 15px;
+                        border-radius: 5px;
+                        color: white;
+                        cursor: pointer;
+                        font-size: 14px;
+                        transition: 400ms;
+                    }
+                    
+                    .btn-form:hover {
+                        background: rgb(0, 0, 0, 0.3);
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
     }
-}
-
-
-
-.containerForm {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 70%;
-    height: 100%;
-    gap: 2.9rem;
-}
-
-.form div {
-    width: 100%;
-}
-
-.labelI {
-    font-family: 'Abel', sans-serif;
-    display: block;
-    margin-bottom: 5px;
-    color: white;
-    text-shadow: 0.3px 0.3px 0.5px black;
-    font-size: 20px;
-}
-
-.inputForm {
-    width: 100%;
-    color: white;
-    padding: 10px;
-    border: none;
-    background: transparent;
-    border-radius: 0 5px;
-    font-size: 14px;
-    border-bottom: 1px solid #85bb6b;
-    transition: 400ms;
-}
-
-.inputForm:hover {
-    background: rgb(0, 0, 0, 0.2);
-    transform: scale(1.1);
-}
-
-.inputForm::placeholder {
-    color: rgba(255, 255, 255, 0.577);
-}
-
-.inputForm:focus {
-    outline: none;
-    border: none;
-    animation: shake .3s;
-    background: rgb(0, 0, 0, 0.2);
-}
-
-.btns-form {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.btn-form {
-    border: none;
-    background: rgb(0, 0, 0, 0.2);
-    padding: 15px;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
-    transition: 400ms;
-}
-
-.btn-form:hover {
-    background: rgb(0, 0, 0, 0.3);
-    transform: scale(1.1);
 }
 
 .arrowContinue {
@@ -174,28 +170,29 @@ body {
     & .arrowBack:hover {
         transform: scale(1.1);
     }
-}
 
-.containerItems {
-    display: flex;
-    flex-direction: row;
-    margin-right: 5rem;
-
-    & li {
-        padding: 0 1.5rem;
-
-        & a {
-            font-weight: bolder;
-            color: #141E27;
+    .containerItems {
+        display: flex;
+        flex-direction: row;
+        margin-right: 3rem;
+    
+        & li {
+            padding: 0 1.5rem;
+    
+            & a {
+                font-weight: bolder;
+                color: #141E27;
+            }
+        }
+    
+        & li:hover {
+            transform: scale(1.1);
+            transition: .3s;
+            border-bottom: 2px solid  #141E27;
         }
     }
-
-    & li:hover {
-        transform: scale(1.1);
-        transition: .3s;
-        border-bottom: 2px solid  #141E27;
-    }
 }
+
 
 /* --- Estilos del archivo Calendar ---  */
 
