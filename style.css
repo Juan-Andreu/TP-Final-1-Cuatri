@@ -156,6 +156,8 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    ;
 
     .arrowBack {
         background-color: rgba(22, 22, 22, 0.6);
@@ -199,14 +201,14 @@ body {
 .bodyGallery {
     background: #dfdfdf;
     font-family: Arial, sans-serif;
-    padding: 20px;
+    padding: 25px;
 }
 
 .containerPortada {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 
     & h1 {
         font-family: 'Abel', sans-serif;
@@ -242,13 +244,17 @@ body {
     }
 }
 
+
 .containerCard {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
     gap: 5rem;
     height: 75vh;
+    border-radius: 1rem;
+    border: 3px solid rgb(0, 0, 0, 0.1);
 
     .mañana,
     .tarde,
@@ -261,6 +267,13 @@ body {
         border-radius: 1rem;
         border-color: transparent;
         box-shadow: 3px 3px 15px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .mañana:hover,
+    .tarde:hover,
+    .noche:hover {
+        transition: .2s;
+        border: 3px solid rgb(0, 0, 0, 0.1);
     }
 }
 
@@ -370,7 +383,7 @@ body {
     font-size: 2.5rem;
     text-align: center;
     text-shadow: 0.3px 0.3px 15px rgb(255, 255, 255);
-    color: rgba(2, 2, 2, 0.8);
+    color: rgba(0, 0, 0, 0.9);
     margin: 5rem;
 
 }
@@ -385,23 +398,24 @@ body {
     justify-content: center;
 
     .gallery {
-        display: flex;
-        justify-content: center;
         width: 60%;
         height: 20rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        /* overflow: scroll; */
         gap: 1rem;
 
         .img {
             width: 0px;
-            flex-grow: 1;
+            flex: 1 0 auto;
             object-fit: cover;
             opacity: .8;
-            transition: .5s ease;
+            transition: .5s ;
             border-radius: 1rem;
         }
 
         .img:hover {
-            cursor: grab;
             width: 12rem;
             opacity: 1;
             filter: contrast(100%);
