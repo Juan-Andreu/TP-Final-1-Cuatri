@@ -208,7 +208,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
 
     & h1 {
         font-family: 'Abel', sans-serif;
@@ -253,8 +252,6 @@ body {
     flex-wrap: wrap;
     gap: 5rem;
     height: 75vh;
-    border-radius: 1rem;
-    border: 3px solid rgb(0, 0, 0, 0.1);
 
     .mañana,
     .tarde,
@@ -263,7 +260,7 @@ body {
         flex-direction: column;
         justify-content: space-between;
         width: 25rem;
-        height: 80%;
+        height: 75%;
         border-radius: 1rem;
         border-color: transparent;
         box-shadow: 3px 3px 15px 10px rgba(0, 0, 0, 0.2);
@@ -374,8 +371,6 @@ body {
 }
 
 
-
-
 /* --- Estilos de la galeria --- */
 
 .titleGallery {
@@ -385,7 +380,6 @@ body {
     text-shadow: 0.3px 0.3px 15px rgb(255, 255, 255);
     color: rgba(0, 0, 0, 0.9);
     margin: 5rem;
-
 }
 
 .titleGallery:hover {
@@ -405,6 +399,7 @@ body {
         flex-wrap: nowrap;
         /* overflow: scroll; */
         gap: 1rem;
+        margin-bottom: 3rem;
 
         .img {
             width: 0px;
@@ -419,6 +414,33 @@ body {
             width: 12rem;
             opacity: 1;
             filter: contrast(100%);
+        }
+    }
+}
+
+
+@media screen and (max-width:767px) {
+    .containerGallery {
+        display: flex;
+        justify-content: center;
+    
+        .gallery {
+            width: 100%;
+            height: 20rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            /* overflow: scroll; */
+            gap: 1rem;
+    
+            .img {
+                width: 0px;
+                flex: 1 0 auto;
+                object-fit: cover;
+                opacity: .8;
+                transition: .5s ;
+                border-radius: 1rem;
+            }
         }
     }
 }
