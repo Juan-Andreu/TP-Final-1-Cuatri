@@ -1,3 +1,35 @@
+const nombre = document.getElementById("name");
+const apellido = document.getElementById("lastName");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const parrafo = document.getElementById("warnings");
+
+myForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let warnings = "";
+  entrar = false;
+  let regexEmail =
+    /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/; /* Sacado de Email validation */
+  parrafo.innerHTML = "";
+  if (nombre.value.length < 4) {
+    warnings += "El nombre es muy corto. <br>";
+    entrar = true;
+  }
+  if (!regexEmail.test(email.value)) {
+    warnings += "El email no es valido. <br>";
+    entrar = true;
+  }
+  if (password.value.length < 8) {
+    warnings += "La contraseña no es valida.";
+    entrar = true;
+  }
+  if (entrar) {
+    parrafo.innerHTML = warnings;
+  } else {
+    parrafo.innerHTML = "Su formulario ha sido enviado.";
+  }
+});
+
 document.getElementById("myForm").addEventListener("submit", function (event) {
   event.preventDefault(); // Evita el envío del formulario si la validación falla
 
@@ -12,22 +44,6 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   console.log("Email: ", email);
   console.log("Password: ", password);
 });
-
-/* document.getElementById('myForm'): Obtiene el elemento del documento HTML que tiene el ID 'myForm'. Este elemento representa el formulario en el que se está trabajando.
-
-.addEventListener('submit', function(event) { ... }): Aquí se agrega un "event listener" al formulario. El evento que se está escuchando es el envío del formulario (submit). Cuando ocurre este evento, se ejecuta la función proporcionada. El parámetro event representa el objeto de evento relacionado con el envío del formulario.
-
-event.preventDefault();: Esta línea evita que el formulario se envíe si la validación falla. Al llamar al método preventDefault() en el objeto de evento, se cancela el comportamiento predeterminado del envío del formulario.
-
-let name = document.getElementById('name').value;: Aquí se obtiene el valor del campo de entrada con el ID 'name' y se guarda en la variable name. El método getElementById('name') devuelve el elemento del documento HTML correspondiente al campo de entrada, y luego .value obtiene el valor actual del campo.
-
-let lastName = document.getElementById('lastName').value;: Esto hace lo mismo que el punto anterior, pero para el campo de entrada con el ID 'lastName'.
-
-let email = document.getElementById('email').value;: Aquí se obtiene el valor del campo de entrada con el ID 'email' y se guarda en la variable email.
-
-let password = document.getElementById('password').value;: Esta línea obtiene el valor del campo de entrada con el ID 'password' y se guarda en la variable password. */
-
-
 
 function agregarTarea(seccion) {
   // Obtener el valor del campo de entrada de texto correspondiente a la sección
